@@ -18,7 +18,9 @@ namespace Kontur.Courses.Testing.Implementations
 
 		public IEnumerable<Tuple<int, string>> GetStatistics()
 		{
-			return stats.OrderByDescending(kv => kv.Value).ThenBy(kv => kv.Key).Select(kv => Tuple.Create(kv.Value, kv.Key));
+			return stats.OrderByDescending(kv => kv.Value)
+                .ThenBy(kv => kv.Key)
+                .Select(kv => Tuple.Create(kv.Value, kv.Key));
 		}
 	}
 }
